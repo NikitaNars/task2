@@ -67,18 +67,18 @@ namespace Task2_2_
             thread3.Start();
             Thread waitThread = new Thread(() =>
             {
-                // Ждем завершения каждого потока
+                
                 thread1.Join();
                 thread2.Join();
                 thread3.Join();
 
-                // Выводим результат после завершения всех потоков
+                
                 Dispatcher.Invoke(() =>
                 {
                     MessageBox.Show("Все потоки завершили работу!", "Готово",
                                   MessageBoxButton.OK, MessageBoxImage.Information);
 
-                    // Дополнительно можно обновить текстовые блоки
+                    
                     Text1.Text = "Поток 1 завершен";
                     Text2.Text = "Поток 2 завершен";
                     Text3.Text = "Поток 3 завершен";
